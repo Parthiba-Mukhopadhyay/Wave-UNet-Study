@@ -101,4 +101,3 @@ Over time, several modifications have been made to Wave-U-Net to improve its per
 - **Dilated Convolutions**: Some versions of Wave-U-Net incorporate dilated convolutions to increase the receptive field without increasing the number of parameters, helping the model capture long-range dependencies in audio.
 
 ---
-**In summary**, Wave-U-Net is a powerful tool for audio source separation that leverages the strengths of U-Net architecture but adapts it for 1D audio signals in the time domain. Its combination of downsampling, upsampling, and skip connections allows it to process and separate audio with high fidelity, making it an essential tool for modern audio engineering tasks.
