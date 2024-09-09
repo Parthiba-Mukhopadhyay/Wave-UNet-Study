@@ -76,24 +76,33 @@ For source separation tasks, the loss function typically used is the **Mean Squa
 
 Other loss functions, such as **Signal-to-Distortion Ratio (SDR)**, can also be used depending on the specific task.
 
-## 5. Applications
+## 5. Hyperparameters
+Hyperparameters are settings that are set before training begins and control the training process itself. These are not learned from the data. They include:
+
+- **n_fft**: The size of the Fast Fourier Transform window. It defines how many samples are used for each FFT calculation. Larger values capture more frequency detail but require more computation and can be too large for short signals.
+- **hop_length**: The number of samples between frames. It controls the overlap between adjacent windows in the STFT.
+- **batch_size**: The number of samples processed before the model is updated. Larger batch sizes can lead to more stable gradients but require more memory.
+- **epochs**: The number of times the entire dataset is passed through the model during training.
+- **learning_rate** (not explicitly shown but typically a hyperparameter in optimizers): Controls how much to adjust the weights of the model with respect to the gradient during training.
+
+## 6. Applications
 
 - **Music Source Separation**: Wave-U-Net is commonly used to separate different instruments (e.g., vocals, drums, bass) from mixed audio tracks.
 - **Speech Enhancement**: It can be applied to denoise or separate speech from noisy environments.
 - **Environmental Sound Separation**: In applications such as wildlife monitoring or urban sound analysis, Wave-U-Net helps isolate specific sounds (e.g., cars, birds, etc.).
 
-## 6. Advantages of Wave-U-Net
+## 7. Advantages of Wave-U-Net
 
 - **Works in Time Domain**: Unlike many traditional approaches that rely on time-frequency representations (e.g., spectrograms), Wave-U-Net operates directly in the time domain, which can preserve more detailed temporal information.
 - **Efficient Architecture**: The U-Net structure, with its use of skip connections, allows the model to reconstruct audio signals with high fidelity, even after aggressive downsampling.
 - **Versatility**: It can be applied to a wide range of audio-related tasks, such as speech separation, noise reduction, and music demixing.
 
-## 7. Challenges and Limitations
+## 8. Challenges and Limitations
 
 - **Computational Intensity**: Training Wave-U-Net on large datasets (especially high-fidelity audio) can be computationally expensive due to the large number of parameters and operations involved.
 - **Generalization**: Although it performs well on certain tasks, the model may not generalize well to highly diverse audio domains without careful training and tuning.
 
-## 8. Variants of Wave-U-Net
+## 9. Variants of Wave-U-Net
 
 Over time, several modifications have been made to Wave-U-Net to improve its performance:
 
